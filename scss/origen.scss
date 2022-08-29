@@ -1,0 +1,79 @@
+/*extend*/
+.boton{
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    text-align: center;
+    color: black;
+    border: solid black;
+}
+.boton-azul{
+    @extend .boton;
+    background-color: blue;
+}
+.boton-rojo{
+    @extend .boton;
+    background-color: blueviolet;
+}
+/*mixins*/
+@mixin tamanio($ancho, $alto, $texto) {
+    width: $ancho;
+    height: $alto;
+    font-size: $texto;
+}
+.caja{
+    @include tamanio(100px, 50px, 3rem)
+}
+.caja-dos{
+    @include tamanio(200px, 10px, 2rem)
+}
+/*each*/
+@each $secciones in body, header, main, div, footer {
+    .#{secciones}{
+        background-color: aqua;
+        background-image: linear-gradient(315deg, blueviolet 0%, aquamarine 74%);
+    }
+}
+/*map*/
+$mapa:(
+    facebook: blue,
+    mail: aqua,
+    instagram: blueviolet,
+);
+@each $nombres, $color in $mapa {
+    .boton-#{$nombres}{
+        background-color: $color;
+        border: $color;
+    }
+}
+/*estilos*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+img{
+    width: 350px;
+    height: auto;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+li{
+    float: left;
+    margin-top: 65px;
+    list-style: none;
+    padding: 30px;
+}
+li:hover a{
+    color: red;
+}
+nav{
+    float: right;
+    align-items: flex-start;
+}
+a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: black;
+}
