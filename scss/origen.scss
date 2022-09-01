@@ -59,21 +59,15 @@ img{
     margin-left: 5px;
     margin-bottom: 5px;
 }
-li{
-    float: left;
-    margin-top: 65px;
-    list-style: none;
-    padding: 30px;
-}
-li:hover a{
-    color: red;
-}
-nav{
-    float: right;
-    align-items: flex-start;
-}
 a{
     text-decoration: none;
     font-family: sans-serif;
     color: black;
 }
+.negrita {
+    font-weight: bold;
+  }
+  
+  nav {
+    align-items: flex-start;
+  }
